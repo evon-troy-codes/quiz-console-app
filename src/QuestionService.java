@@ -4,8 +4,10 @@ import java.util.Scanner;
 public class QuestionService {
 
     Question[] questions = new Question[5];
+    int score = 0;
 
-public QuestionService(){
+
+    public QuestionService(){
 
     questions[0] = new Question(1,"What is the default value of a boolean variable in java?", new String[]{"A) true. ","B) false. ", "C) 0. ", "D) null."},"B");
     questions[1] = new Question(2, "Which of the follow is not a valid Java primitive type?", new String[]{"A) int", "B) double", "C) String", "D) char"}, "C");
@@ -18,7 +20,6 @@ public QuestionService(){
     public void playQuiz(){
 
         Scanner play = new Scanner(System.in);
-        int score = 0;
 
         for (Question q : questions) {
             System.out.println("Question #" + q.getId());
@@ -42,10 +43,13 @@ public QuestionService(){
                 System.out.println("✅" + q.getAnswer() + " is correct!");
                 score++;
             } else {
-                System.out.println("Incorrect. The correct answer is " + q.getAnswer());
+                System.out.println("❌ Incorrect. The correct answer is " + q.getAnswer());
             }
             System.out.println();
         }
+    }
+
+    public void printScore(){
         System.out.println("\uD83C\uDFAF You got " + score + "/" + questions.length + " correct." );
     }
 }
