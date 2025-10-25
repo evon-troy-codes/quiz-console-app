@@ -39,13 +39,13 @@ public class QuestionService {
             String answer;
 
             while (true) {
-                System.out.println("Enter your answer (A, B, C, D): ");
+                System.out.println("Enter your answer (A, B, X, Y): ");
                 answer = play.nextLine().trim().toUpperCase();
 
-                if (answer.equals("A") || answer.equals("B") || answer.equals("C") || answer.equals("D")) {
+                if (answer.equals("A") || answer.equals("B") || answer.equals("X") || answer.equals("Y")) {
                     break; // valid input
                 } else {
-                    System.out.println("❌ Input is invalid. Please enter only A, B, C, or D.");
+                    System.out.println("❌ Input is invalid. Please enter only A, B, X, or Y.");
                 }
             }
 
